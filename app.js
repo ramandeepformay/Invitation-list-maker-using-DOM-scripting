@@ -20,22 +20,28 @@ form.addEventListener("submit", (e)=>{
 //creating function
 function createElement(text){
     const li = document.createElement("li");
-    li.textContent = text;
+    //creating span element
+    const span = document.createElement("span");
+    span.textContent = text;
+    li.appendChild(span);
     //CREATING LABEL
     const label = document.createElement("label");
     label.textContent = "Confirmed";
     //creating checkbox
     const checkbox =document.createElement("input");
     checkbox.type="checkbox";
+    //creating edit button
+    const edit =document.createElement("button");
+    edit.textContent = "Edit";
+
    //creating remove button
     const remove = document.createElement("button");
     remove.textContent = "Remove";
-
-     //appending children
+    //appending children
     label.appendChild(checkbox);
-    li.appendChild(label)
+    li.appendChild(label);
+    li.appendChild(edit);
     li.appendChild(remove);
-    
     return li;
 }
 
@@ -57,9 +63,38 @@ ul.addEventListener("change",(e)=>{
 //evebt listener for remove button
 ul.addEventListener("click", (e)=>{
   const target=e.target;
-  //targeting element with tag name button
-     if(target.tagName === "BUTTON"){
-        const li = target.parentNode;
-        ul.removeChild(li);
+  const li = target.parentNode;
+  //targeting element with tag name button 
+  if(target.tagName === "BUTTON"){
+    if(target.textContent === "Remove"){
+       ul.removeChild(li);
      }
+     //targeting to edit the element
+    else if(target.textContent === "Edit"){
+        // first create element and then access it
+        const span = li.firstElementChild;
+        const input =document.createElement("input");
+        input.type="text";
+        //putting the value of span into input
+        input.value=span.textContent;
+        //adding input 
+        li.insertBefore(input, span);
+        //removing span element
+        li.removeChild(span);
+        target.textContent = "save";
+     }
+     //it's same like before but in reverse order
+    else if(target.textContent === "save"){
+        console.log(target);
+        const input = li.firstElementChild;
+        console.log(input);
+        const span = document.createElement("span");
+        span.textContent = input.value;
+        li.insertBefore(span, input);
+        li.removeChild(input);
+        target.textContent = "Edit";
+    } 
+    
+    }
+
 })

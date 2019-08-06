@@ -16,10 +16,10 @@ body {
 }
 /* header styling */
 header{
-    background:url(business-tile-retina.png) no-repeat center center;
+    background:url(business-tile-retina.png) no-repeat center;
     background-position:cover;
     margin-top:1%;
-    height:50vh;
+    height:40vh;
     position:relative;
     
 }
@@ -28,7 +28,7 @@ form{
     position:absolute;
     bottom:-15%;
     z-index:10;
-    left:35%;
+    left:42%;
 }
 input{
     outline:none;
@@ -50,7 +50,7 @@ button[type="submit"]{
 }
 #invite{
     width:80%;
-    margin:15% auto;
+    margin:10% auto;
     text-align: center;
     text-transform:capitalize;
     font-size:2.5rem;
@@ -60,7 +60,7 @@ li{
     list-style-type: none;
     font-size:2rem;
     text-align: left;
-    margin-top:5% ;
+    margin-top:5%;
     padding:5px;
 }
 label{
@@ -80,7 +80,11 @@ button{
     background-color:rgba(230, 81, 81, 0.74);
     border:1px solid white;
     padding:5px;
-    margin:5px 0px;
+    margin:5px 10px 5px  0px;
     letter-spacing:1px;
     border-radius:2px;
+    outline:none;
+}
+li button:nth-of-type(1){
+    background-color:rgba(142, 173, 29, 0.411);
 }
