@@ -20,15 +20,15 @@ header{
     background-position:cover;
     margin-top:1%;
     height:40vh;
-    position:relative;
+    
     
 }
 /* form styling */
 form{
     position:absolute;
-    bottom:-15%;
+    top:45%;
     z-index:10;
-    left:42%;
+    left:40%;
 }
 input{
     outline:none;
@@ -47,10 +47,18 @@ button[type="submit"]{
 .wrapper {
     max-width: 1140px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
+div label{
+    margin:50px 20px;
+    text-align: left;
+}
+
 #invite{
-    width:80%;
-    margin:10% auto;
+    width:90%;
+    margin:2% auto;
     text-align: center;
     text-transform:capitalize;
     font-size:2.5rem;
@@ -63,10 +71,11 @@ li{
     margin-top:5%;
     padding:5px;
 }
+
 label{
     display: block;
     font-size:1.5rem;
-    color:gray;
+    color:rgb(92, 84, 84);
     text-transform: capitalize;
     margin-top:5px;
 }
